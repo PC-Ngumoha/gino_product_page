@@ -1,0 +1,92 @@
+.download-section {
+  height: 80vh;
+  width: 100%;
+  background: #f8f4ed;
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-title {
+  font-size: 4rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #30251d;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.download-subtitle {
+  color: #9d897b;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.download-platforms {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.platform {
+  background: none;
+  padding: 1rem 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.platform h2 {
+  font-size: 2rem;
+  color: #30251d;
+  margin: 0.7rem 0 0.2rem 0;
+  font-weight: 600;
+}
+
+.platform p {
+  color: #9d897b;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.download-btn {
+  width: 100%;
+  padding: 0.8rem 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border: 3px solid #30251d;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2ss;
+}
+
+.download-btn:hover {
+  transform: translate(1%, 10%);
+  transition: transform .2s;
+}
+
+.download-footer {
+  color: #9d897b;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .download-title {
+    font-size: 3rem;
+  }
+
+  .download-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .download-btn {
+    font-size: 1.2rem;
+  }
+}

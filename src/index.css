@@ -31,3 +31,24 @@ text-color : #9d897b
 html {
   font-size: 10px;
 }
+
+/* Utility classes */
+.cactus-green {
+  background-color: #4b9b4b;
+  color: #FFFFFF;
+}
+
+.cactus-green:hover {
+  background-color: #4ea44e;
+  transition: background-color .2s;
+}
+
+.earth-brown {
+  background-color: #f2995a;
+  color: #FFFFFF;
+}
+
+.earth-brown:hover {
+  background-color: #f4a366;
+  transition: background-color .2s;
+}
