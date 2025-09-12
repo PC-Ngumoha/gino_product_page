@@ -46,15 +46,284 @@
 
 /* My own styles */
 
+/* Utility classes */
+.cactus-green {
+  background-color: #4b9b4b;
+  color: #FFFFFF;
+}
+
+.cactus-green:hover {
+  background-color: #4ea44e;
+  transition: background-color .2s;
+}
+
+.earth-brown {
+  background-color: #f2995a;
+  color: #FFFFFF;
+}
+
+.earth-brown:hover {
+  background-color: #f4a366;
+  transition: background-color .2s;
+}
+
 /* HERO SECTION */
 .hero {
   background: linear-gradient(to right bottom, #e8dcc4, #e6bb9c);
   width: 100vw;
   height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9d897b;
 }
+
+.hero > .intro {
+  height: fit-content;
+  width: 30%;
+  margin-right: 3rem;
+}
+
+.hero > .intro > h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: .2rem;
+  color: #30251d;
+}
+
+.hero > .intro > span {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.hero > .intro > .buttons {
+  width: 100%;
+  height: 9rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero > .intro > .buttons > button {
+  height: 60%;
+  width: 35%;
+  margin-right: 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  line-height: 1.1;
+  border: 3px solid #30251d;
+}
+
+.hero > .intro > .buttons > button:first-of-type::before {
+  content: '▷ ';
+  position: relative;
+}
+
+.hero > .intro > .buttons > button:hover {
+  transform: translate(1%, 10%);
+  transition: transform .2s;
+}
+
+.hero > .image {
+  width: 30%;
+  box-shadow: 2px 1px 2px #30251d;
+}
+
+.hero > .image > img {
+  height: 100%;
+  width: 100%;
+}
+
+/* TABLET SCREENS */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero > .intro {
+    width: 45%;
+  }
+
+  .hero > .intro > h1 {
+    font-size: 6rem;
+  }
+
+  .hero > .intro > span {
+    font-size: 2rem;
+  }
+
+  .hero > .intro > .buttons > button {
+    width: 45%;
+    font-size: 1.6rem;
+  }
+
+  .hero > .image {
+    width: 45%;
+  }
+}
+
+
+/* MOBILE SCREENS */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem;
+  }
+
+  .hero>.intro {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .hero > .intro > h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero > .intro > span {
+    font-size: 1.8rem;
+  }
+
+  .hero > .intro > .buttons {
+    flex-direction: column;
+  }
+
+  .hero > .intro > .buttons > button {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero > .image {
+    width: 80%;
+    order: -1;
+  }
+}
+
 
 .next {
   background-color: transparent;
   width: 100vw;
   height: 100vh;
+}
+
+.download-section {
+  height: 80vh;
+  width: 100%;
+  background: #f8f4ed;
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-title {
+  font-size: 4rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #30251d;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.download-subtitle {
+  color: #9d897b;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.download-platforms {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.platform {
+  background: none;
+  padding: 1rem 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.platform h2 {
+  font-size: 2rem;
+  color: #30251d;
+  margin: 0.7rem 0 0.2rem 0;
+  font-weight: 600;
+}
+
+.platform p {
+  color: #9d897b;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.download-btn {
+  width: 100%;
+  padding: 0.8rem 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border: 3px solid #30251d;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2ss;
+}
+
+.download-btn:hover {
+  transform: translate(1%, 10%);
+  transition: transform .2s;
+}
+
+.download-footer {
+  color: #9d897b;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .download-title {
+    font-size: 3rem;
+  }
+
+  .download-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .download-btn {
+    font-size: 1.2rem;
+  }
+}
+
+footer {
+  height: 15vh;
+  background-color: #30251d;
+  padding: 2rem;
+  color: #FFFFFF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer > h3 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+footer > p {
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.3rem;
 }
