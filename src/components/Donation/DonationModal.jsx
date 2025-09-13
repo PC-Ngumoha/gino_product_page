@@ -27,7 +27,8 @@ export default function DownloadModal({ setter }) {
     <div className="donation-modal">
       <h2 className="donation-title">Please, buy me a coffee !!!</h2>
       <p className="donation-desc">
-        I'm a solo developer from Nigeria and your support would go a long way
+        I'm a solo developer from Nigeria and your support would go a really
+        long way.
       </p>
 
       <form className="donation-form" onSubmit={handleDonation}>
