@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 
 import './Donation.css';
 
-export default function DownloadModal() {
+export default function DownloadModal({ setter }) {
   const [amount, setAmount] = useState('');
-  // const [customAmount, setCustomAmount] = useState('');
+
+  // Delays user for 10 seconds
+  useEffect(function () {
+    const intervalId = setInterval(() => setter((prev) => (prev -= 1)), 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  });
 
   const predefinedAmounts = [1500, 2000, 2500, 3000];
 
@@ -17,7 +25,7 @@ export default function DownloadModal() {
 
   return (
     <div className="donation-modal">
-      <h2 className="donation-title">Please buy me a coffee !!!</h2>
+      <h2 className="donation-title">Please, buy me a coffee !!!</h2>
       <p className="donation-desc">
         I'm a solo developer from Nigeria and your support would go a long way
       </p>
@@ -37,17 +45,6 @@ export default function DownloadModal() {
             </button>
           ))}
         </div>
-
-        {/* <div className="donation-custom">
-          <label htmlFor="custom-amount">Custom Amount</label>
-          <input
-            id="custom-amount"
-            type="number"
-            placeholder="Enter amount"
-            value={customAmount}
-            onChange={(e) => setCustomAmount(e.target.value)}
-          />
-        </div> */}
 
         <div className="donation-submit">
           <Button type="submit" className="btn">

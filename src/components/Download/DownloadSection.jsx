@@ -9,6 +9,7 @@ import DonationModal from '../Donation/DonationModal';
 
 export default function DownloadSection() {
   const [show, setShow] = useState(false);
+  const [timeToProceed, setTimeToProceed] = useState(10);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -36,14 +37,14 @@ export default function DownloadSection() {
               <rect x="9" y="18" width="6" height="2" rx="1" />
             </svg>
             <h2>Desktop</h2>
-            <p>Windows, Mac &amp; Linux</p>
+            <p>Windows, Mac &amp Linux</p>
             <Button className="download-btn cactus-green" onClick={handleShow}>
               download
             </Button>
           </div>
         </div>
         <p className="download-footer">
-          Free to play &bull; No ads &bull; Smooth gaming experience
+          Free to play &bull No ads &bull Smooth gaming experience
         </p>
       </section>
 
@@ -51,7 +52,7 @@ export default function DownloadSection() {
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton />
         <Modal.Body>
-          <DonationModal />
+          <DonationModal setter={setTimeToProceed} />
         </Modal.Body>
         <Modal.Footer>
           {/* TODO: Will change this later so that it actually routes to the download start */}
@@ -59,8 +60,13 @@ export default function DownloadSection() {
             onClick={handleClose}
             className="cactus-green skip-btn"
             size="lg"
+            disabled={timeToProceed > 0}
           >
-            Proceed to download
+            {timeToProceed > 0
+              ? `Download in ${timeToProceed} second${
+                  timeToProceed > 1 ? 's' : ''
+                }`
+              : 'Proceed to download'}
           </Button>
         </Modal.Footer>
       </Modal>
