@@ -6,7 +6,7 @@ import './Donation.css';
 export default function DownloadModal({ setter }) {
   const [amount, setAmount] = useState('');
 
-  // Delays user for 10 seconds
+  // Delays user for 10 seconds while soliciting donations
   useEffect(function () {
     const intervalId = setInterval(() => setter((prev) => (prev -= 1)), 1000);
 
