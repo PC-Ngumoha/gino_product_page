@@ -34,7 +34,7 @@ html {
 
 /* Utility classes */
 .cactus-green {
-  background-color: #4b9b4b;
+  background-color: #4b9b4b !important; /* Override conflicting bootstrap styling */
   color: #FFFFFF;
 }
 
