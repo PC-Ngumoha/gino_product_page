@@ -13,14 +13,21 @@ export default function DownloadSection() {
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+  const routeToGithubRepo = () => {
+    window.open(
+      'https://github.com/PC-Ngumoha/Gino',
+      '_blank',
+      'noopener,noreferrer  '
+    );
+  };
 
   return (
     <>
       <section className="download-section" id="download">
-        <h1 className="download-title">Download Gino Now!</h1>
+        <h1 className="download-title">Get Gino Now!</h1>
         <p className="download-subtitle">
-          Start your prehistoric adventure today. Available right now on Desktop
-          platforms.
+          Start your prehistoric adventure today. Available right now on your
+          development platforms.
         </p>
         <div className="download-platforms">
           <div className="platform">
@@ -39,7 +46,7 @@ export default function DownloadSection() {
             <h2>Desktop</h2>
             <p>Windows, Mac &amp Linux</p>
             <Button className="download-btn cactus-green" onClick={handleShow}>
-              download
+              Play
             </Button>
           </div>
         </div>
@@ -57,16 +64,16 @@ export default function DownloadSection() {
         <Modal.Footer>
           {/* TODO: Will change this later so that it actually routes to the download start */}
           <Button
-            onClick={handleClose}
+            onClick={routeToGithubRepo}
             className="cactus-green skip-btn"
             size="lg"
             disabled={timeToProceed > 0}
           >
             {timeToProceed > 0
-              ? `Download in ${timeToProceed} second${
+              ? `Github link in ${timeToProceed} second${
                   timeToProceed > 1 ? 's' : ''
                 }`
-              : 'Proceed to download'}
+              : 'Proceed to Github'}
           </Button>
         </Modal.Footer>
       </Modal>
